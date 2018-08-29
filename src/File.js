@@ -151,9 +151,7 @@ class File {
         if (typeof body === 'object') {
             body = JSON.stringify(body, null, 4);
         }
-        
         body = body + os.EOL;
-        console.log(body)
         fs.writeFileSync(this.absolutePath, body);
 
         return this;

@@ -25,12 +25,6 @@ class WebpackConfig {
             .buildPlugins()
             .buildResolving()
             .mergeCustomConfig();
-        //console.log(JSON.stringify(this.webpackConfig))
-        // this.webpackConfig.output.filename = function() {
-        //     consoel.log(arguments)
-        //     return '[name].[chunkhash].js'
-        // }
-        // this.webpackConfig.output.chunkFilename = '[name].[chunkhash].js'
         Mix.dispatch('configReady', this.webpackConfig);
 
         return this.webpackConfig;

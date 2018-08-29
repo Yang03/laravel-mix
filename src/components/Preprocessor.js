@@ -137,11 +137,10 @@ class Preprocessor {
         Assert.preprocessor(type, src, output);
 
         src = new File(src);
-        //console.log(src)//
 
         output = this.normalizeOutput(
             new File(output),
-            src.nameWithoutExtension() +  '.css'
+            src.nameWithoutExtension() + '.css'
         );
         this.details = (this.details || []).concat({
             type: this.constructor.name.toLowerCase(),

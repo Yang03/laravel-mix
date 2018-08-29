@@ -33,8 +33,6 @@ class Version {
      */
     webpackPlugins() {
         let WebpackChunkHashPlugin = require('webpack-chunk-hash');
-        let ExtractTextPlugin = require("extract-text-webpack-plugin")
-        //console.log('version')
         return [
             new webpack[
                 Mix.inProduction()

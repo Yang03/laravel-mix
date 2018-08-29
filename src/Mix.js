@@ -3,7 +3,6 @@ let Manifest = require('./Manifest');
 let Dispatcher = require('./Dispatcher');
 let Components = require('./components/Components');
 let isFunction = require('lodash').isFunction;
-console.log('fffffffff')
 class Mix {
     /**
      * Create a new instance.

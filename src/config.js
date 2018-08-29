@@ -265,8 +265,6 @@ module.exports = function() {
 
             mergeWith(this, options, (objValue, srcValue) => {
                 if (Array.isArray(objValue)) {
-//  objValue.concat(srcValue);
-                    //console.log(objValue)
                     return objValue.concat(srcValue);
                 }
             });

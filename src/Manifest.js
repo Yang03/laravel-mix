@@ -35,7 +35,6 @@ class Manifest {
      * @param {string} filePath
      */
     add(filePath) {
-        console.log(filePath + 'add')
         filePath = this.normalizePath(filePath);
 
         let original = filePath.replace(/\.\w+\./, '.');
