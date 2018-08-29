@@ -27,7 +27,10 @@ class Preprocessor {
             let outputPath = preprocessor.output.filePath
                 .replace(Config.publicPath + path.sep, path.sep)
                 .replace(/\\/g, '/');
-
+            if (Mix.components.get('version')) {
+                let arr = outputPath.split('.')
+                outputPath = arr[0] + '.[contenthash].' + arr[1]
+            }    
             tap(new ExtractTextPlugin(outputPath), extractPlugin => {
                 let loaders = [
                     {
@@ -134,12 +137,12 @@ class Preprocessor {
         Assert.preprocessor(type, src, output);
 
         src = new File(src);
+        //console.log(src)//
 
         output = this.normalizeOutput(
             new File(output),
-            src.nameWithoutExtension() + '.css'
+            src.nameWithoutExtension() +  '.css'
         );
-
         this.details = (this.details || []).concat({
             type: this.constructor.name.toLowerCase(),
             src,
@@ -165,7 +168,6 @@ class Preprocessor {
         if (output.isDirectory()) {
             output = new File(path.join(output.filePath, fallbackName));
         }
-
         return output;
     }
 }

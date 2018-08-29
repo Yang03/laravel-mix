@@ -153,7 +153,7 @@ class File {
         }
         
         body = body + os.EOL;
-
+        console.log(body)
         fs.writeFileSync(this.absolutePath, body);
 
         return this;

@@ -7,6 +7,7 @@ let ManifestPlugin = require('../webpackPlugins/ManifestPlugin');
 let MockEntryPlugin = require('../webpackPlugins/MockEntryPlugin');
 let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
+
 module.exports = function() {
     let plugins = [];
 

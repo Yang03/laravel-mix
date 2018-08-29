@@ -1,3 +1,4 @@
+
 let objectValues = require('lodash').values;
 let without = require('lodash').without;
 
@@ -34,9 +35,10 @@ class Manifest {
      * @param {string} filePath
      */
     add(filePath) {
+        console.log(filePath + 'add')
         filePath = this.normalizePath(filePath);
 
-        let original = filePath.replace(/\?id=\w{20}/, '');
+        let original = filePath.replace(/\.\w+\./, '.');
 
         this.manifest[original] = filePath;
 
@@ -49,11 +51,11 @@ class Manifest {
      * @param {string} file
      */
     hash(file) {
-        let hash = new File(path.join(Config.publicPath, file)).version();
-
-        let filePath = this.normalizePath(file);
-
-        this.manifest[filePath] = filePath + '?id=' + hash;
+        // let hash = new File(path.join(Config.publicPath, file)).version();
+        
+        // let filePath = this.normalizePath(file);
+        // console.log(filePath)
+        // this.manifest[filePath] = filePath;
 
         return this;
     }
